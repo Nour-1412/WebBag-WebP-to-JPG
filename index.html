@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 
 <html lang="ar" dir="rtl">
+
 <head>
 
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>تحويل WebP إلى JPG | WebBag</title>
@@ -13,6 +15,7 @@
 <link rel="stylesheet" href="style.css">
 
 </head>
+
 <body>
 
 <div class="container">
@@ -27,4 +30,45 @@
 
 <input
 type="file"
-id="
+id="imageInput"
+accept=".webp,image/webp"
+
+>
+
+<div id="preview"></div>
+
+<div class="info">
+
+<p>
+اسم الملف:
+<strong id="fileName"></strong>
+</p>
+
+<p>
+الحجم:
+<strong id="fileSize"></strong>
+</p>
+
+</div>
+
+<div class="buttons">
+
+<button id="convertBtn">
+تحويل إلى JPG
+</button>
+
+<a id="downloadBtn">
+تنزيل JPG
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<script src="app.js"></script>
+
+</body>
+
+</html>
