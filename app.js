@@ -17,16 +17,16 @@ const fileSize =
 document.getElementById("fileSize");
 
 const infoBox =
-document.querySelector(".info");
+document.getElementById("infoBox");
 
-let jpgDataUrl = "";
+let jpgUrl = "";
 
 imageInput.addEventListener(
 "change",
-previewImage
+showPreview
 );
 
-function previewImage(){
+function showPreview(){
 
 const file =
 imageInput.files[0];
@@ -47,7 +47,7 @@ fileName.textContent =
 file.name;
 
 fileSize.textContent =
-(formatFileSize(file.size));
+formatSize(file.size);
 
 infoBox.style.display =
 "block";
@@ -59,10 +59,10 @@ downloadBtn.style.display =
 
 convertBtn.addEventListener(
 "click",
-convertToJPG
+convertImage
 );
 
-function convertToJPG(){
+function convertImage(){
 
 const file =
 imageInput.files[0];
@@ -78,7 +78,7 @@ return;
 const img =
 new Image();
 
-img.onload = function(){
+img.onload = () => {
 
 const canvas =
 document.createElement("canvas");
@@ -92,7 +92,9 @@ img.height;
 const ctx =
 canvas.getContext("2d");
 
-ctx.fillStyle = "#ffffff";
+ctx.fillStyle =
+"#ffffff";
+
 ctx.fillRect(
 0,
 0,
@@ -106,17 +108,17 @@ img,
 0
 );
 
-jpgDataUrl =
+jpgUrl =
 canvas.toDataURL(
 "image/jpeg",
 0.95
 );
 
 downloadBtn.href =
-jpgDataUrl;
+jpgUrl;
 
 downloadBtn.download =
-"webbag-converted.jpg";
+"webbag-image.jpg";
 
 downloadBtn.style.display =
 "flex";
@@ -128,7 +130,7 @@ URL.createObjectURL(file);
 
 }
 
-function formatFileSize(bytes){
+function formatSize(bytes){
 
 if(bytes < 1024){
 
