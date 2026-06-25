@@ -25,19 +25,25 @@
 <h1>تحويل WebP إلى JPG</h1>
 
 <p class="subtitle">
-ارفع صورة WebP وحولها إلى JPG خلال ثوانٍ.
+حوّل صور WebP إلى JPG مجانًا وبجودة عالية مباشرة داخل متصفحك.
 </p>
 
 <input
 type="file"
 id="imageInput"
-accept=".webp,image/webp"
+accept=".webp,image/webp,image/*"
 
 >
 
-<div id="preview"></div>
+<div id="preview">
 
-<div class="info">
+<p class="placeholder">
+اختر صورة لعرض المعاينة
+</p>
+
+</div>
+
+<div class="info" id="infoBox">
 
 <p>
 اسم الملف:
@@ -70,5 +76,4 @@ accept=".webp,image/webp"
 <script src="app.js"></script>
 
 </body>
-
 </html>
